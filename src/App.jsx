@@ -10,7 +10,7 @@ function App() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${import.meta.env.VITE_OPENAI}`,
+        Authorization: `Bearer ${process.env.VITE_OPENAI}`,
       },
       body: JSON.stringify({
         model: 'gpt-3.5-turbo',
@@ -49,8 +49,6 @@ function App() {
 
   const handleSendMessage = () => {
     getOPENAI_Response()
-
-    setNewMessage('')
   }
 
   return (
